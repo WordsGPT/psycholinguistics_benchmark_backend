@@ -1,7 +1,7 @@
 # Psycholinguistics framework
 
-## Features
-- Run esitamtion of word features and fine-tunings using OpenAI models, Gemini models, Hugging Face models using HF API or local deployment
+## Features
+- Run estimations of word features and fine-tunings using OpenAI models, Gemini models, Hugging Face models using HF API or local deployment
 - Fine-tune new versions of LLMs
 
 ## Setting Up the framework
@@ -29,7 +29,7 @@ You can use these commands:
 cat batches/*.jsonl >> batches/batches.jsonl
 cat results/*.jsonl >> results/results.jsonl
 ```
-1. Execute `python3 generateResults.py <EXPERIMENT_PATH> {json, num, weighted_sum} [extra-otpions]` for the experiment -> for your own experiment is possible that you want to modify it. We recommend creating a new file for reproducibility -> it generates a .xlsx with the results
+1. Execute `python3 generateResults.py <EXPERIMENT_PATH> {json, num, weighted_sum} [extra-options]` for the experiment -> for your own experiment is possible that you want to modify it. We recommend creating a new file for reproducibility -> it generates a .xlsx with the results
 
 ### Make a fine-tuning:
 1. Prepare the fine-tuning dataset by running `python3 create_finetuning_dataset.py <EXPERIMENT_PATH> <EXPERIMENT NAME>`.
