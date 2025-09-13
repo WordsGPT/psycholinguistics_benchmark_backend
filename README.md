@@ -29,7 +29,7 @@ You can use these commands:
 cat batches/*.jsonl >> batches/batches.jsonl
 cat results/*.jsonl >> results/results.jsonl
 ```
-1. Execute `python3 generateResults.py <EXPERIMENT_PATH> {json, num, weighted_sum} [extra-options]` for the experiment -> for your own experiment is possible that you want to modify it. We recommend creating a new file for reproducibility -> it generates a .xlsx with the results
+1. Execute `python3 generateResults.py <EXPERIMENT_PATH> {json, number, weighted_sum} [extra-options]` for the experiment -> for your own experiment is possible that you want to modify it. We recommend creating a new file for reproducibility -> it generates a .xlsx with the results
 
 ### Make a fine-tuning:
 1. Prepare the fine-tuning dataset by running `python3 create_finetuning_dataset.py <EXPERIMENT_PATH> <EXPERIMENT NAME>`.
