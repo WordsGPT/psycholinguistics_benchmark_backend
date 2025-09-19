@@ -1,0 +1,6 @@
+experiments:
+
+  familiarity_english_v01_short_prompt:
+      dataset_path: "LEX_AR.xlsx"
+      model_name: "gpt-4o-mini-2024-07-18"
+      company: "OpenAI"

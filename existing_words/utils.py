@@ -43,16 +43,15 @@ def read_txt(file_path: str) -> str:
         return file.read()
 
 
-def load_config(experiment_path: str, config_type: str, name: str) -> dict:
+def load_config(config_type: str, name: str) -> dict:
     """
     Load configuration for a given experiment or fine-tuning model.
 
-    :param experiment_path: Path to the experiment directory.
     :param config_type: Type of configuration to load ('experiments' or 'finetuning').
     :param name: Name of the experiment or fine-tuning model.
     :return: Configuration dictionary for the specified name.
     """
-    config = read_yaml(file_path=f"{experiment_path}/config.yaml")
+    config = read_yaml(file_path=f"config.yaml")
 
     if config_type not in config:
         print(f"Configuration type {config_type} not found in config.yaml.")
