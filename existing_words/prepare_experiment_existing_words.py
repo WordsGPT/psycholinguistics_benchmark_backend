@@ -181,7 +181,9 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         EXPERIMENT_NAME = sys.argv[1]
     else:
-        EXPERIMENT_NAME = "original"
+        print(
+            "Provide as argument the experiment name, i.e.: python3 prepare_experiment.py <EXPERIMENT_NAME>."
+        )
         exit()
 
 

@@ -1,6 +1,81 @@
 experiments:
 
-  familiarity_english_v01_short_prompt:
+  ar_prompt:
       dataset_path: "LEX_AR.xlsx"
+      model_name: "gpt-4o-mini-2024-07-18"
+      company: "OpenAI"
+
+  ch_prompt:
+      dataset_path: "LEX_CH.xlsx"
+      model_name: "gpt-4o-mini-2024-07-18"
+      company: "OpenAI"
+
+  de_prompt:
+      dataset_path: "LEX_DE.xlsx"
+      model_name: "gpt-4o-mini-2024-07-18"
+      company: "OpenAI"
+
+  eng_prompt:
+      dataset_path: "LEX_ENG.xlsx"
+      model_name: "gpt-4o-mini-2024-07-18"
+      company: "OpenAI"
+
+  esp_prompt:
+      dataset_path: "LEX_ESP.xlsx"
+      model_name: "gpt-4o-mini-2024-07-18"
+      company: "OpenAI"
+
+  fin_prompt:
+      dataset_path: "LEX_FIN.xlsx"
+      model_name: "gpt-4o-mini-2024-07-18"
+      company: "OpenAI"
+  
+  fr_prompt:
+      dataset_path: "LEX_FR.xlsx"
+      model_name: "gpt-4o-mini-2024-07-18"
+      company: "OpenAI"
+
+  ita_prompt:
+      dataset_path: "LEX_ITA.xlsx"
+      model_name: "gpt-4o-mini-2024-07-18"
+      company: "OpenAI"
+
+  jp_prompt:
+      dataset_path: "LEX_JP.xlsx"
+      model_name: "gpt-4o-mini-2024-07-18"
+      company: "OpenAI"
+
+  kor_prompt:
+      dataset_path: "LEX_KOR.xlsx"
+      model_name: "gpt-4o-mini-2024-07-18"
+      company: "OpenAI"
+
+  mal_prompt:
+      dataset_path: "LEX_MAL.xlsx"
+      model_name: "gpt-4o-mini-2024-07-18"
+      company: "OpenAI"
+
+  nl_prompt:
+      dataset_path: "LEX_NL.xlsx"
+      model_name: "gpt-4o-mini-2024-07-18"
+      company: "OpenAI"
+
+  north_sami_prompt:
+      dataset_path: "LEX_North_Sami.xlsx"
+      model_name: "gpt-4o-mini-2024-07-18"
+      company: "OpenAI"
+
+  pol_prompt:
+      dataset_path: "LEX_POL.xlsx"
+      model_name: "gpt-4o-mini-2024-07-18"
+      company: "OpenAI"
+
+  pol2_prompt:
+      dataset_path: "LEX_POL2.xlsx"
+      model_name: "gpt-4o-mini-2024-07-18"
+      company: "OpenAI"
+
+  ukr_prompt:
+      dataset_path: "LEX_UKR.xlsx"
       model_name: "gpt-4o-mini-2024-07-18"
       company: "OpenAI"
