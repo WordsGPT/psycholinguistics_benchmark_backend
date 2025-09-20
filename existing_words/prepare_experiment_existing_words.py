@@ -13,12 +13,11 @@ Important Considerations:
 
 Usage:
 Run the script from the command line with the experiment name as an argument:
-    python prepare_experiment_existing_words.py 
+    python prepare_experiment_existing_words.py <EXPERIMENT_NAME>
 
 Example:
     python prepare_experiment_existing_words.py my_experiment
 
-This will create a directory named `my_experiment` with subdirectories for batches, containing the prepared task files.
 """
 
 import json
