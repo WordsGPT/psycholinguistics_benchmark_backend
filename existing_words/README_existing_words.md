@@ -9,9 +9,9 @@
 
 ### Make estimations with some model (including fine-tuning models):
 
-1. Prepare the experiment by running `python3 prepare_experiment.py <EXPERIMENT NAME>`. -> generates the batches
+1. Prepare the experiment by running `python3 prepare_experiment_existing_words.py <EXPERIMENT NAME>`. -> generates the batches
 2. Save the batches.jsonl files in `batches` folder
-3. Run the experiment by executing `python3 execute_experiment.py <EXPERIMENT NAME>`. ->  executes the batches.
+3. Run the experiment by executing `python3 execute_experiment_existing_words.py <EXPERIMENT NAME>`. ->  executes the batches.
 
 ### Processing results:
 
@@ -26,4 +26,4 @@ cat batches/*.jsonl >> batches/batches.jsonl
 cat results/*.jsonl >> results/results.jsonl
 ```
 
-1. Execute `python3 generateResults.py {json, number, weighted_sum} [extra-options]` for the experiment -> for your own experiment is possible that you want to modify it. We recommend creating a new file for reproducibility -> it generates a .xlsx with the results
+1. Execute `python3 generateResults_existing_words.py {json, number, weighted_sum} [extra-options]` for the experiment -> for your own experiment is possible that you want to modify it. We recommend creating a new file for reproducibility -> it generates a .xlsx with the results
