@@ -76,7 +76,7 @@ def get_tasks_openai(
     for counter, prompt in enumerate(prompt_list, start=1):
 
         task = {
-            "custom_id": f"task_{counter}",
+            "custom_id": f"{EXPERIMENT_NAME}_task_{counter}",
             "method": "POST",
             "url": "/v1/chat/completions",
             "body": {
@@ -110,7 +110,7 @@ def get_tasks_gemini(
     tasks = []
     for counter, prompt in enumerate(prompt_list, start=1):
         task = {
-            "key": f"task_{counter}",
+            "key": f"{EXPERIMENT_NAME}_task_{counter}",
             "request": {
                 "model": f"models/{model_version}",
                 "contents": [
@@ -146,7 +146,7 @@ def get_tasks_huggingface(
     tasks = []
     for counter, prompt in enumerate(prompt_list, start=1):
         task = {
-            "id": f"task_{counter}",
+            "id": f"{EXPERIMENT_NAME}_task_{counter}",
             "prompt": prompt,
             "temperature": temperature,
             "response_logprobs": logprobs,
