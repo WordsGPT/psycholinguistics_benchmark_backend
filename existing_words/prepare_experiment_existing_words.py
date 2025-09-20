@@ -13,10 +13,10 @@ Important Considerations:
 
 Usage:
 Run the script from the command line with the experiment name as an argument:
-    python prepare_experiment.py 
+    python prepare_experiment_existing_words.py 
 
 Example:
-    python prepare_experiment.py my_experiment
+    python prepare_experiment_existing_words.py my_experiment
 
 This will create a directory named `my_experiment` with subdirectories for batches, containing the prepared task files.
 """
@@ -182,7 +182,7 @@ if __name__ == "__main__":
         EXPERIMENT_NAME = sys.argv[1]
     else:
         print(
-            "Provide as argument the experiment name, i.e.: python3 prepare_experiment.py <EXPERIMENT_NAME>."
+            "Provide as argument the experiment name, i.e.: python3 prepare_experiment_existing_words.py <EXPERIMENT_NAME>."
         )
         exit()
 
