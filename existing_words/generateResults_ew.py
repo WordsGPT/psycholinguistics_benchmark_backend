@@ -11,7 +11,7 @@ import sys
 
 
 """ USAGE:
-python generateResults__existing_words.py <EXPERIMENT_NAME> [mode] [language]
+python generateResults__ew.py <EXPERIMENT_NAME> [mode] [language]
 
 modes: 
 - json (output of estimations is a JSON with the word and its prediction. It checks if the word in the input matches the word in the output)

@@ -14,10 +14,10 @@ Important Considerations:
 
 Usage:
 Run the script from the command line with the experiment name as an argument:
-    python execute_experiment_existing_words.py <EXPERIMENT_NAME>
+    python execute_experiment_ew.py <EXPERIMENT_NAME>
 
 Example:
-    python execute_experiment_existing_words.py my_experiment
+    python execute_experiment_ew.py my_experiment
 
 This will execute the tasks in the batch files and save the results in the `results` directory within the specified experiment directory.
 """
@@ -457,7 +457,7 @@ if __name__ == "__main__":
         EXPERIMENT_NAME = sys.argv[1]
     else:
         print(
-            "Provide as argument the experiment name, i.e.: python3 execute_experiment_existing_words.py <EXPERIMENT_NAME>."
+            "Provide as argument the experiment name, i.e.: python3 execute_experiment_ew.py <EXPERIMENT_NAME>."
         )
         exit()
 
