@@ -19,7 +19,7 @@ Run the script from the command line with the experiment name as an argument:
     - <experiment_name>: process specific experiment
     - all: process all experiments
     - failed: retry failed experiments
-    - status: show failed experiments status
+    - status: show failed experiments
 
 """
 

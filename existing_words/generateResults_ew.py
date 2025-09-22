@@ -4,8 +4,8 @@ python generateResults__ew.py <EXPERIMENT_NAME> [mode] [language]
 EXPERIMENT_NAME:
 - <experiment_name>: process specific experiment. Need to select a mode.
 - all: process all experiments. Need to select a mode.
-- failed: retry failed experiments. Not select a mode.
-- status: show failed experiments status. Not select a mode.
+- failed: retry failed experiments. Do not select a mode.
+- status: show failed experiments. Do not select a mode.
 
 modes: 
 - json (output of estimations is a JSON with the word and its prediction. It checks if the word in the input matches the word in the output)

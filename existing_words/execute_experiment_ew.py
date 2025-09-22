@@ -1,9 +1,12 @@
 """
-Script para automatizar la ejecución de todos los experimentos (batches) para todas las compañías soportadas.
-Si se pasa el nombre de un experimento concreto, ejecuta solo ese experimento.
-Si se pasa "all", ejecuta todos los experimentos de la carpeta batches.
-Si se pasa "remain", comprueba y descarga todos los batches pendientes en tracking.
-Si se pasa "status", muestra el estado de todos los batches en tracking.
+Usage:
+    python3 execute_experiment_ew.py <EXPERIMENT NAME>
+
+    EXPERIMENT_NAME:
+         * <experiment_name>: process specific experiment.
+         * "all": process all experiments in the batches folder.
+         * "remain": check and download batches still in tracking.
+         * "status": show batches still in tracking.
 """
 
 import os
