@@ -53,15 +53,19 @@ def get_tasks(
     logprobs: bool = True,
     top_logprobs: int = 5,
     company: str = "OpenAI",
-    ft_dir: str = None) -> list:
+    ft_dir: str = None,
+    experiment_name: str = None) -> list:
+    if experiment_name is None:
+        experiment_name = EXPERIMENT_NAME
+    
     if company == "OpenAI":
-        return get_tasks_openai(prompt_list, model_version, temperature, logprobs, top_logprobs)
+        return get_tasks_openai(prompt_list, model_version, temperature, logprobs, top_logprobs, experiment_name)
     elif company == "Google":
-        return get_tasks_gemini(prompt_list, model_version, temperature, logprobs, top_logprobs)
+        return get_tasks_gemini(prompt_list, model_version, temperature, logprobs, top_logprobs, experiment_name)
     elif company == "HuggingFace":
-        return get_tasks_huggingface(prompt_list, model_version, temperature, logprobs, top_logprobs, ft_dir) 
+        return get_tasks_huggingface(prompt_list, model_version, temperature, logprobs, top_logprobs, ft_dir, experiment_name) 
     elif company == "Local":
-        return get_tasks_huggingface(prompt_list, model_version, temperature, logprobs, top_logprobs, ft_dir)
+        return get_tasks_huggingface(prompt_list, model_version, temperature, logprobs, top_logprobs, ft_dir, experiment_name)
     else:
         raise ValueError(f"Unknown company: {company}")
 
@@ -71,12 +75,16 @@ def get_tasks_openai(
     temperature: int = 0,
     logprobs: bool = True,
     top_logprobs: int = 5,
+    experiment_name: str = None,
 ) -> list:
+    if experiment_name is None:
+        experiment_name = EXPERIMENT_NAME
+        
     tasks = []
     for counter, prompt in enumerate(prompt_list, start=1):
 
         task = {
-            "custom_id": f"{EXPERIMENT_NAME}_task_{counter}",
+            "custom_id": f"{experiment_name}_task_{counter}",
             "method": "POST",
             "url": "/v1/chat/completions",
             "body": {
@@ -100,14 +108,18 @@ def get_tasks_gemini(
     temperature: float = 0.0,
     logprobs: bool = True,
     top_logprobs: int = 5,
+    experiment_name: str = None,
 ) -> list:
     """
     Genera una lista de tasks con la estructura oficial de la API de Google Gemini.
     """
+    if experiment_name is None:
+        experiment_name = EXPERIMENT_NAME
+        
     tasks = []
     for counter, prompt in enumerate(prompt_list, start=1):
         task = {
-            "key": f"{EXPERIMENT_NAME}_task_{counter}",
+            "key": f"{experiment_name}_task_{counter}",
             "request": {
                 "model": f"models/{model_version}",
                 "contents": [
@@ -139,11 +151,15 @@ def get_tasks_huggingface(
     top_logprobs: int = 5,
     #prompt_key: str = "{WORD}",
     ft_dir: str = None,
+    experiment_name: str = None,
 ) -> list:
+    if experiment_name is None:
+        experiment_name = EXPERIMENT_NAME
+        
     tasks = []
     for counter, prompt in enumerate(prompt_list, start=1):
         task = {
-            "id": f"{EXPERIMENT_NAME}_task_{counter}",
+            "id": f"{experiment_name}_task_{counter}",
             "prompt": prompt,
             "temperature": temperature,
             "response_logprobs": logprobs,
@@ -251,19 +267,14 @@ def run_single_experiment(experiment_name, all_configs):
             model_version=config_args["model_name"],
             company=config_args["company"],
             ft_dir=config_args.get("ft_dir", None),
+            experiment_name=experiment_name,
         )
 
         # Use experiment_name for batch creation
-        global EXPERIMENT_NAME
-        original_experiment_name = EXPERIMENT_NAME
-        EXPERIMENT_NAME = experiment_name
-        
         list_of_batch_names = create_batches(
             tasks=tasks,
             run_prefix=experiment_name,
         )
-        
-        EXPERIMENT_NAME = original_experiment_name
         
         # Only consider successful if we have created batches
         if list_of_batch_names and len(list_of_batch_names) > 0:
@@ -536,6 +547,7 @@ if __name__ == "__main__":
                     model_version=config_args["model_name"],
                     company=config_args["company"],
                     ft_dir=config_args.get("ft_dir", None),
+                    experiment_name=EXPERIMENT_NAME,
                 )
 
                 list_of_batch_names = create_batches(
