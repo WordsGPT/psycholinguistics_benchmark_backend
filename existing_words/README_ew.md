@@ -9,15 +9,17 @@
 
 ### Make estimations with some model:
 
-1. Prepare the experiment by running `python3 prepare_experiment_ew.py <EXPERIMENT NAME>`. -> generates the batches**
-   **EXPERIMENT_NAME:**
+1. Prepare the experiment by running `python3 prepare_experiment_ew.py <EXPERIMENT_NAME>`. -> generates the batches**
+
+**EXPERIMENT_NAME:**
    * <experiment_name>: process specific experiment.
    * "all": process all experiments.
    * "failed": retry failed experiments.
    * "status": show failed experiments.
 2. Save the batches files in `batches` folder (ensure that the name of the file includes the name of the experiment)
-3. Run the experiment by executing `python3 execute_experiment_ew.py <EXPERIMENT NAME>`. ->  executes the batches.
-   **EXPERIMENT_NAME:**
+3. Run the experiment by executing `python3 execute_experiment_ew.py <EXPERIMENT_NAME>`. ->  executes the batches.
+
+**EXPERIMENT_NAME:**
    * <experiment_name>: process specific experiment.
    * "all": process all experiments in the batches folder.
    * "remain": check and download batches still in tracking.
@@ -26,8 +28,9 @@
 ### Generating results:
 
 1. Save the results of batches in `results` folder (ensure that the name of the file includes the name of the experiment)
-2. Execute `python3 generateResults_ew.py <EXPERIMENT NAME> {json, number, weighted_sum} [extra-options]` -> it generates a .xlsx with the results of the experiment in the folder `outputs/<EXPERIMENT NAME>`
-   **EXPERIMENT_NAME:**
+2. Execute `python3 generateResults_ew.py <EXPERIMENT_NAME> {json, number, weighted_sum} [extra-options]` -> it generates a .xlsx with the results of the experiment in the folder `outputs/<EXPERIMENT NAME>`
+
+**EXPERIMENT_NAME:**
    * <experiment_name>: process specific experiment. Need to select a mode.
    * "all": process all experiments. Need to select a mode.
    * "failed": retry failed experiments. Do not select a mode.
@@ -35,9 +38,11 @@
 
 ### Processing results:
 
-**WARNIG!!:** The .xlsx dataset must include a column named "answer" with the expected or correct response in order to proceed.
+**WARNING!!:** The .xlsx dataset must include a column named "answer" with the expected or correct response in order to proceed.
 
-1. Execute `python3 processResults_ew.py <EXPERIMENT NAME>` -> it generates a .xlsx comparing the response obtained from the LLM with the expected or correct result, giving also the accuracy of the model.
-   **EXPERIMENT_NAME:**
+1. Execute `python3 processResults_ew.py <EXPERIMENT_NAME>` -> it generates a .xlsx comparing the response obtained from the LLM with the expected or correct result, giving also the accuracy of the model.
+
+
+**EXPERIMENT_NAME:**
    * <experiment_name>: process specific experiment.
    * "all": process all experiments in the batches folder.
