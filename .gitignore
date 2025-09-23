@@ -1,0 +1,15 @@
+venv/
+.venv/
+__pycache__/
+apis.env
+.DS_Store
+
+processResults/
+failed_experiments/
+results/
+results_final/
+batches/
+batches_final/
+outputs/
+
+cache_model/
