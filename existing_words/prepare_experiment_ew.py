@@ -31,7 +31,7 @@ from datetime import datetime
 
 import pandas as pd
 
-from utils import load_config, openai_login, read_txt
+from utils_ew import load_config, openai_login, read_txt
 
 
 def load_prompt_list(file_path: str, column_name: str) -> list:

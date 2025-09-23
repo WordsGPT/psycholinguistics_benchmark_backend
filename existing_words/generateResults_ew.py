@@ -31,7 +31,7 @@ import sys
 
 # Add utils import
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from utils import read_yaml
+from utils_ew import read_yaml
 
 def extract_word_input(text):
     match = re.findall(f'{open_quotations_constant}(.*?){closing_quotations_constant}', text)
