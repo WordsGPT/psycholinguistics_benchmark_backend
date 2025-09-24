@@ -87,8 +87,8 @@ def get_tasks_openai(
                 "temperature": temperature,
                 "logprobs": logprobs,
                 "top_logprobs": top_logprobs,
-                "max_completion_tokens": 500,
-                "reasoning_effort": "minimal",
+                #"max_completion_tokens": 500,
+                #"reasoning_effort": "minimal",
                 "response_format": {"type": "text"},
                 "messages": [
                 {"role": "user", "content": prompt.replace(prompt_key, str(word))}
