@@ -4,7 +4,7 @@ Process results from existing word experiments.
 This script processes the results of existing word experiments by:
 1. Finding experiments in outputs/ directories containing .xlsx files with 'number' or 'weighted_sum' in names
 2. Extracting dataset files from config.yaml for each experiment
-3. Comparing 'familiarity' predictions with 'answer' ground truth
+3. Comparing 'exist' predictions with 'answer' ground truth
 4. Generating results with accuracy calculations
 
 Usage:
@@ -56,13 +56,13 @@ def find_experiments():
 
 
 def extract_output_data(output_file):
-    """Extract 'word' and 'familiarity' columns from output file."""
+    """Extract 'word' and 'exist' columns from output file."""
     try:
         df = pd.read_excel(output_file)
-        if 'word' not in df.columns or 'familiarity' not in df.columns:
+        if 'word' not in df.columns or 'exist' not in df.columns:
             print(f"Error: Required columns not found in {output_file}")
             return None
-        return df[['word', 'familiarity']].copy()
+        return df[['word', 'exist']].copy()
     except Exception as e:
         print(f"Error reading {output_file}: {e}")
         return None
@@ -93,7 +93,7 @@ def extract_dataset_data(dataset_path):
 
 
 def compare_results(output_data, dataset_data):
-    """Compare familiarity predictions with expected answers."""
+    """Compare exist predictions with expected answers."""
     # Merge on word column
     merged = pd.merge(output_data, dataset_data, on='word', how='inner')
     
@@ -101,12 +101,12 @@ def compare_results(output_data, dataset_data):
         print("Error: No matching words found between output and dataset")
         return None
     
-    # Compare familiarity and answer to determine correctness
-    merged['correct'] = (merged['familiarity'] == merged['answer']).astype(int)
+    # Compare exist and answer to determine correctness
+    merged['correct'] = (merged['exist'] == merged['answer']).astype(int)
     
     # Rename columns as specified
     merged = merged.rename(columns={
-        'familiarity': 'obtained_answer',
+        'exist': 'obtained_answer',
         'answer': 'expected_answer'
     })
     
